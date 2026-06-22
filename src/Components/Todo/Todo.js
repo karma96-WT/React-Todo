@@ -1,4 +1,4 @@
-import React, { memo, use, useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import './Todo.css'
 import Confirmation from '../Confimation/Confirmation'
 
@@ -8,18 +8,12 @@ function Todo({task, onDelete, onClick}) {
   const [doStatusChange, setDoStatusChange] =useState(false)
   const [msg, setMsg] = useState('')
 
-  useEffect(()=>{
-    const status = task.status;
-    if (status === 'active'){
-      setMsg('Completed');
-    }
-    else if(status === 'pending'){
-      setMsg('Active');
-    }
-    else{
-      setMsg('Active')
-    }
-  })
+  let msg = 'Active';
+  if (task.status === 'active') {
+    msg = 'Completed';
+  } else if (task.status === 'pending') {
+    msg = 'Active';
+  }
 
   return (
     <>
