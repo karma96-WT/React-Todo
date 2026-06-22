@@ -1,23 +1,72 @@
 import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import NavBar from "./Components/NavBar/NavBar";
+import Todos from "./Components/Todos";
+import Footer from "./Components/Footer/Footer";
+import FAB from "./Components/FAB/FAB.js"
+import AddTask from './Components/AddTask/AddTask.js';
+import Confirmation from './Components/Confimation/Confirmation.js';
 
 function App() {
+  const [task,setTask] =useState(()=>{
+    const savedTasks = localStorage.getItem('task')
+    return savedTasks ? JSON.parse(savedTasks): []
+  }) 
+
+  const [currentFilter, setCurrentFilter] = useState('all');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isConfirmatioOpen, setIsConfirmationOpen] = useState(true);
+
+  useEffect(()=>{
+    localStorage.setItem('task', JSON.stringify(task))
+  },[task]);
+
+  const handleTaskAdd = (newTitle, newDescription) =>{
+    const newTask ={
+      id: task.length + 1,
+      title: newTitle,
+      description: newDescription,
+      status: 'pending',
+    }
+    setTask([...task, newTask]);
+  }
+
+  const onDelete = (Todo) => {
+    setTask(task.filter((e)=>{
+      return e!==Todo;
+    }))
+  }
+
+  const onClick = (Todo) => {
+    setTask(
+      task.map((t)=>{
+        if (t.id === Todo){
+          return{
+            ...t,
+            status: t.status === 'pending'? 'active': t.status === 'active'? 'completed':'active'
+          };
+        }
+        return t;
+      })
+    )
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <>
+        <NavBar setFilter={setCurrentFilter} currentFilter={currentFilter} />
+        <Todos initialTasks = {task} currentFilter= {currentFilter} onDelete = {onDelete} onClick={onClick}/>
+        <FAB onClick={() => setIsModalOpen(true)} />
+        <Footer/>
+        <AddTask 
+          initialTasks= {task}
+          setTasks = {setTask}
+          isOpen={isModalOpen} 
+          onClose={() => setIsModalOpen(false)}
+          onAddTask = {handleTaskAdd}
+        />
+      </>
     </div>
   );
 }

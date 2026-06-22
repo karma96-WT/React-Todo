@@ -1,0 +1,29 @@
+.FAB-btn{
+    position: fixed;
+    bottom: 8vw;
+    right: 8vw;
+    z-index: 2000;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #044313;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.FAB-icon{
+    font-size: 32px;
+}
+.FAB-btn:hover{
+    background-color: aliceblue;
+    color: #044313;
+    border: 2px solid #044313;
+}
+.FAB-btn:active {
+  transform: scale(0.95);    /* Shrink slightly when clicked */
+}

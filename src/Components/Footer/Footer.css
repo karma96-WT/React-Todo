@@ -1,0 +1,19 @@
+.footer{
+    background-color: #044313;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+.logo-container{
+    display: flex;
+    align-items: center;
+}
+.logo{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+.end-para{
+    color: white;
+}

@@ -1,0 +1,58 @@
+.todo-container{
+    border-radius: 10px;
+    background-color: rgba(243, 234, 234, 0.7);
+    display: block;
+    align-items: start;
+    padding: 1rem;
+}
+
+.todo-element-container{
+    border: 1px solid pink;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    justify-content: space-between;
+}
+.todo-title{
+    text-align: start;
+    padding: 0 1rem;
+}
+.todo-description{
+    color: rgb(145, 133, 133);
+    padding-left: 2rem;
+}
+.todo-btn{
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+}
+.todo-btn:hover{
+    background-color: rgb(159, 7, 7);
+}
+.todo-btn:active {
+  transform: scale(0.95);    /* Shrink slightly when clicked */
+}
+.todo-checkbox-and-description-container{
+    display: flex;
+}
+.todo-status{
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: capitalize; /* Automatically turns 'active' into 'Active' */
+    margin-top: 4px;
+    padding: 1rem;
+}
+.todo-status.active {
+    color: #0d47a1; /* Vivid Blue */
+}
+
+.todo-status.pending {
+    color: #e65100; /* Deep Amber / Orange */
+}
+
+.todo-status.completed {
+    color: #1b5e20; /* Deep Green */
+}
