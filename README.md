@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+# To-Do List React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React task manager for creating, filtering, updating, and deleting to-do items. Tasks are saved in the browser with `localStorage`, so they remain available after a page refresh.
+
+## Features
+
+- Add tasks with a title and description
+- Persist tasks in browser `localStorage`
+- Filter tasks by `All`, `Pending`, `Active`, and `Completed`
+- Change task status with a confirmation dialog
+- Delete tasks with a confirmation dialog
+- Floating action button for opening the add-task modal
+- Responsive component-based UI built with React
+
+## Tech Stack
+
+- React 19
+- Create React App / `react-scripts`
+- CSS modules by component folder
+- Web Vitals
+- React Testing Library
+
+## Getting Started
+
+### Prerequisites
+
+Install Node.js and npm before running the project.
+
+### Installation
+
+```bash
+npm install
+```
+
+### Run the App
+
+```bash
+npm start
+```
+
+The development server runs at:
+
+```text
+http://localhost:3000
+```
+
+### Run Tests
+
+```bash
+npm test
+```
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The production-ready files are generated in the `build` folder.
+
+## Project Structure
+
+```text
+to-do-list-react/
+├── public/
+│   ├── index.html
+│   ├── logo.png
+│   └── manifest.json
+├── src/
+│   ├── Components/
+│   │   ├── AddTask/
+│   │   ├── Confimation/
+│   │   ├── FAB/
+│   │   ├── Footer/
+│   │   ├── NavBar/
+│   │   ├── Todo/
+│   │   └── Todos.js
+│   ├── App.js
+│   ├── App.css
+│   ├── index.js
+│   └── index.css
+├── package.json
+└── README.md
+```
+
+## How It Works
+
+`App.js` owns the task list state and stores it in `localStorage` under the `task` key. The main components receive state and callbacks through props:
+
+- `NavBar` changes the current task filter.
+- `Todos` filters and renders the task list.
+- `Todo` displays one task and opens confirmations for delete/status actions.
+- `AddTask` handles task creation through a modal form.
+- `Confirmation` provides the reusable confirmation prompt.
+- `FAB` opens the add-task modal.
+- `Footer` renders the app footer.
+
+Task statuses move between `pending`, `active`, and `completed` when a task is clicked and confirmed.
 
 ## Available Scripts
 
-In the project directory, you can run:
+| Command | Description |
+| --- | --- |
+| `npm start` | Starts the development server |
+| `npm test` | Runs tests in watch mode |
+| `npm run build` | Creates a production build |
+| `npm run eject` | Ejects Create React App configuration |
 
-### `npm start`
+## Notes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- This project uses browser storage only. There is no backend or database.
+- Data is stored per browser/device.
+- Clearing browser site data removes saved tasks.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
