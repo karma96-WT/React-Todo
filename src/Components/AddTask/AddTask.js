@@ -54,7 +54,10 @@ function AddTask({isOpen, onClose, initialTasks, onAddTask}){
                 {add && (
                     <Confirmation
                         onConfirm={finalSubmissionConfirmation}
-                        onCancel = { () => setAdd(false)}
+                        onCancel={(e) => {
+                            if (e) e.stopPropagation(); 
+                            setAdd(false);
+                        }}
                         message={'add'}
                     />
                 )}
