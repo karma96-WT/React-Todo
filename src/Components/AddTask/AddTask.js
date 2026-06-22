@@ -22,6 +22,7 @@ function AddTask({isOpen, onClose, initialTasks, onAddTask}){
         onAddTask(title,description);
         setTitle('');
         setDescription('');
+        setAdd(false);
         onClose();
     }
 
