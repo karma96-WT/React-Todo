@@ -14,7 +14,6 @@ function App() {
 
   const [currentFilter, setCurrentFilter] = useState('all');
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isConfirmatioOpen, setIsConfirmationOpen] = useState(true);
 
   useEffect(()=>{
     localStorage.setItem('task', JSON.stringify(task))
