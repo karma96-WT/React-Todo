@@ -99,11 +99,11 @@ Task statuses move between `pending`, `active`, and `completed` when a task is c
 
 ## Available Scripts
 
-| Command | Description |
-| --- | --- |
-| `npm start` | Starts the development server |
-| `npm test` | Runs tests in watch mode |
-| `npm run build` | Creates a production build |
+| Command         | Description                           |
+| --------------- | ------------------------------------- |
+| `npm start`     | Starts the development server         |
+| `npm test`      | Runs tests in watch mode              |
+| `npm run build` | Creates a production build            |
 | `npm run eject` | Ejects Create React App configuration |
 
 ## Notes
@@ -111,7 +111,3 @@ Task statuses move between `pending`, `active`, and `completed` when a task is c
 - This project uses browser storage only. There is no backend or database.
 - Data is stored per browser/device.
 - Clearing browser site data removes saved tasks.
-
-## License
-
-This project is private and does not currently include a license.
