@@ -6,7 +6,6 @@ function Todo({task, onDelete, onClick}) {
 
   const [doDelete, setDoDelete] = useState(false);
   const [doStatusChange, setDoStatusChange] =useState(false)
-  const [msg, setMsg] = useState('')
 
   let msg = 'Active';
   if (task.status === 'active') {
