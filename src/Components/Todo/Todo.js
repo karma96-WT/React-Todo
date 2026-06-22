@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './Todo.css'
 import Confirmation from '../Confimation/Confirmation'
 

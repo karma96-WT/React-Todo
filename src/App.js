@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import NavBar from "./Components/NavBar/NavBar";
@@ -6,7 +5,6 @@ import Todos from "./Components/Todos";
 import Footer from "./Components/Footer/Footer";
 import FAB from "./Components/FAB/FAB.js"
 import AddTask from './Components/AddTask/AddTask.js';
-import Confirmation from './Components/Confimation/Confirmation.js';
 
 function App() {
   const [task,setTask] =useState(()=>{
